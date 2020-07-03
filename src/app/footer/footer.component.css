@@ -1,0 +1,11 @@
+.site-footer
+{
+  background-color:lightgrey;
+    position: fixed;
+    left: 0;
+    bottom: 0px;
+    width: 100%;
+    color: black;
+    text-align: center;
+ 
+}

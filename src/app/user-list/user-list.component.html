@@ -1,0 +1,42 @@
+<div style="padding:10;">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Age</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Email</th>
+                <th scope="col">DOB</th>
+                <th scope="col">Address</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users.results;let i = index"
+                [ngStyle]="{'background-color':i === selectedRow ? 'lightgray' : '' }">
+
+                <td appTitleCase>{{user.name.first +" "+user.name.last }}</td>
+                <td *ngIf="user.gender=='male'" appGenderIcon></td>
+                <td *ngIf="user.gender=='female'" appFemaleGenderIcon></td>
+                <td>{{user.registered.age}}</td>
+                <td>{{user.phone}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.dob.date}}</td>
+                <td>{{user.location.street.number +" "+user.location.street.name+","+user.location.city }}
+                </td>
+                <td><button (click)="onClickHandler(user,i)"
+                        [ngClass]="{'background-color': 'cadetblue', 'border-color': 'black', 'color': 'black'}"
+                        type="button">Show</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{{dataService.user}}
+<div *ngIf="dataService.user; else noUserSelected">
+    <app-user-details [selectedUser]="selectedUser"></app-user-details>
+</div>
+
+<ng-template #noUserSelected>
+    No User Selected
+</ng-template>

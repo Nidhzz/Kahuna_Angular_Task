@@ -1,0 +1,101 @@
+<!-- <div style="overflow: auto;">
+    <div class="card" style="width: 8rem;  float:left;">
+        <img src="https://randomuser.me/api/portraits/med/women/78.jpg" alt="Kahuna">
+    </div>
+
+    <div class="card" style="float:left;">
+        <h5 class="card-header">{{selectedUser.name.first +" "+selectedUser.name.last}}</h5>
+        <div class="card-body">
+            <p>Email : {{selectedUser.email}}</p>
+            <p>Phone : {{selectedUser.phone}}</p>
+            <p class="card-text"></p>
+        </div>
+    </div>
+</div> -->
+
+
+<div class="container bootstrap snippet">
+    <div class="panel-body inf-content">
+        <div class="row">
+            <div class="col-md-4">
+                <img alt="" style="width:300px; height: 200px; margin: 10px;" title=""
+                    class="img-circle img-thumbnail isTooltip" src="https://bootdey.com/img/Content/avatar/avatar7.png"
+                    data-original-title="Usuario">
+            </div>
+            <div class="col-md-6">
+                <strong>Information</strong><br><br>
+                <div class="table-responsive">
+                    <table class="table table-user-information">
+                        <tbody>
+
+                            <tr>
+                                <td>
+                                    <strong>
+                                        Name
+                                    </strong>
+                                </td>
+                                <td class="text-primary">
+                                    {{selectedUser.name.first }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>
+                                        Lastname
+                                    </strong>
+                                </td>
+                                <td class="text-primary">
+                                    {{selectedUser.name.last }}
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <strong>
+                                        Phone NO
+                                    </strong>
+                                </td>
+                                <td class="text-primary">
+                                    {{selectedUser.phone}}
+                                </td>
+                            </tr>
+
+
+
+                            <tr>
+                                <td>
+                                    <strong>
+                                        Email
+                                    </strong>
+                                </td>
+                                <td class="text-primary">
+                                    {{selectedUser.email}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>
+                                        Date Of Birth
+                                    </strong>
+                                </td>
+                                <td class="text-primary">
+                                    {{selectedUser.dob.date}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>
+                                        Address
+                                    </strong>
+                                </td>
+                                <td class="text-primary">
+                                    {{selectedUser.location.street.number +" "+selectedUser.location.street.name+","+selectedUser.location.city+","+selectedUser.location.state }}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
