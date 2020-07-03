@@ -16,7 +16,7 @@
             <tr *ngFor="let user of users.results;let i = index"
                 [ngStyle]="{'background-color':i === selectedRow ? 'lightgray' : '' }">
 
-                <td appTitleCase>{{user.name.first +" "+user.name.last }}</td>
+                <td>{{user.name.first +" "+user.name.last | titlecase}}</td>
                 <td *ngIf="user.gender=='male'" appGenderIcon></td>
                 <td *ngIf="user.gender=='female'" appFemaleGenderIcon></td>
                 <td>{{user.registered.age}}</td>

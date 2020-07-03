@@ -16,7 +16,6 @@ export class UserDataService {
   }
   public clearUserDetails() {
     this.user = null
-    console.log("clear ", this.user)
   }
 
   public sendGetRequest() {
