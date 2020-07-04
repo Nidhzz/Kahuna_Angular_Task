@@ -17,7 +17,7 @@ node {
       }      
     }
     stage('Generate Build') {
-      rc = command "npm run ng build"
+      rc = command "npm run ng -- build"
       if (rc != 0) {
         error 'Build generation failed.'
       }      
