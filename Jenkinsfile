@@ -7,6 +7,14 @@ node {
     stage('checkout source') {
         checkout scm
     }
+  
+    stage('Installing Dependacies') {
+      rc = command "npm install"
+      if (rc != 0) {
+        error 'Dependencies installation failed.'
+      }      
+    }
+           
 }
 
 
