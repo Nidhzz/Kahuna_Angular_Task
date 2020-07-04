@@ -14,6 +14,19 @@ node {
         error 'Dependencies installation failed.'
       }      
     }
+    stage('Generate Build') {
+      rc = command "ng build --prod"
+      if (rc != 0) {
+        error 'Build generation failed.'
+      }      
+    }
+
+    stage('Deploying to firebase') {
+      rc = command "firebase deploy"
+      if (rc != 0) {
+        error 'Deployment failed.'
+      }      
+    }
            
 }
 

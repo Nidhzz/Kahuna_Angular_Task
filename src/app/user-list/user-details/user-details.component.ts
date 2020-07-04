@@ -11,12 +11,9 @@ export class UserDetailsComponent implements OnInit {
 
   @Input() selectedUser: {}
 
-  constructor(private dataService: UserDataService) { }
-
+  constructor() { }
 
   ngOnInit() {
 
   }
-
-
 }

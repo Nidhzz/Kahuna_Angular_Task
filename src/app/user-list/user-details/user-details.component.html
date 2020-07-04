@@ -11,71 +11,76 @@
                 <div class="table-responsive">
                     <table class="table table-user-information">
                         <tbody>
+                            <ng-container *ngIf="selectedUser;else noUser">
+                                <tr>
+                                    <td>
+                                        <strong>
+                                            Name
+                                        </strong>
+                                    </td>
+                                    <td class="text-primary">
+                                        {{selectedUser.name.first }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>
+                                            Lastname
+                                        </strong>
+                                    </td>
+                                    <td class="text-primary">
+                                        {{selectedUser.name.last }}
+                                    </td>
+                                </tr>
 
-                            <tr>
-                                <td>
-                                    <strong>
-                                        Name
-                                    </strong>
-                                </td>
-                                <td class="text-primary">
-                                    {{selectedUser.name.first }}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <strong>
-                                        Lastname
-                                    </strong>
-                                </td>
-                                <td class="text-primary">
-                                    {{selectedUser.name.last }}
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>
-                                    <strong>
-                                        Phone NO
-                                    </strong>
-                                </td>
-                                <td class="text-primary">
-                                    {{selectedUser.phone}}
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td>
+                                        <strong>
+                                            Phone NO
+                                        </strong>
+                                    </td>
+                                    <td class="text-primary">
+                                        {{selectedUser.phone}}
+                                    </td>
+                                </tr>
 
 
 
-                            <tr>
-                                <td>
-                                    <strong>
-                                        Email
-                                    </strong>
-                                </td>
-                                <td class="text-primary">
-                                    {{selectedUser.email}}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <strong>
-                                        Date Of Birth
-                                    </strong>
-                                </td>
-                                <td class="text-primary">
-                                    {{selectedUser.dob.date}}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <strong>
-                                        Address
-                                    </strong>
-                                </td>
-                                <td class="text-primary">
-                                    {{selectedUser.location.street.number +" "+selectedUser.location.street.name+","+selectedUser.location.city+","+selectedUser.location.state }}
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td>
+                                        <strong>
+                                            Email
+                                        </strong>
+                                    </td>
+                                    <td class="text-primary">
+                                        {{selectedUser.email}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>
+                                            Date Of Birth
+                                        </strong>
+                                    </td>
+                                    <td class="text-primary">
+                                        {{selectedUser.dob.date}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>
+                                            Address
+                                        </strong>
+                                    </td>
+                                    <td class="text-primary">
+                                        {{selectedUser.location.street.number +" "+selectedUser.location.street.name+","+selectedUser.location.city+","+selectedUser.location.state }}
+                                    </td>
+                                </tr>
+                            </ng-container>
+                            <ng-template #noUser>
+                                <p>No uSER AVAIL</p>
+
+                            </ng-template>
                         </tbody>
                     </table>
                 </div>

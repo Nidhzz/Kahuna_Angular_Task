@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { UserDataService } from '../user-data.service';
-import * as moment from 'moment';
 import { DatePipe } from '@angular/common'
 
 @Component({
@@ -10,18 +9,12 @@ import { DatePipe } from '@angular/common'
 })
 export class UserListComponent implements OnInit {
 
-  users = {}
+  users = null;
   selectedRow = 0;
   selectedUser;
   gender = ""
-  onClickHandler(user, rowIndex) {
-    //   this.selectedUser = user
-    this.selectedRow = rowIndex;
-    this.dataService.setUserDetails(user)
-    this.selectedUser = this.dataService.user
-  }
 
-  constructor(private dataService: UserDataService, private datepipe: DatePipe) {
+  constructor(public dataService: UserDataService, private datepipe: DatePipe) {
   }
 
   ngOnInit() {
@@ -33,6 +26,11 @@ export class UserListComponent implements OnInit {
       });
 
     })
+  }
+  onClickHandler(user, rowIndex) {
+    this.selectedRow = rowIndex;
+    this.dataService.setUserDetails(user)
+    this.selectedUser = this.dataService.user
   }
 
   ngOnChanges() {

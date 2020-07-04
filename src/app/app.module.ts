@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserListComponent } from './user-list/user-list.component';
@@ -34,7 +34,6 @@ const routes: Routes = [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FontAwesomeModule,
     RouterModule.forRoot(routes)
   ],
   exports: [RouterModule],
