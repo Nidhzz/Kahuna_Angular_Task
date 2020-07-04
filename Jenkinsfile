@@ -4,6 +4,8 @@ node {
     // -------------------------------------------------------------------------
     // Check out code from source control.
     // -------------------------------------------------------------------------
+        def fb = tool 'fb'
+
     stage('checkout source') {
         checkout scm
     }
@@ -15,14 +17,16 @@ node {
       }      
     }
     stage('Generate Build') {
-      rc = command "npm run ng -- build"
+      rc = command "ng build --prod"
       if (rc != 0) {
         error 'Build generation failed.'
       }      
     }
 
     stage('Deploying to firebase') {
-      rc = command "npm run firebase deploy"
+        rc = bat returnStatus: true, script: "\"${fb}\"/firebase deploy"
+
+    //   rc = command "firebase deploy"
       if (rc != 0) {
         error 'Deployment failed.'
       }      
