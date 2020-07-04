@@ -22,7 +22,7 @@ node {
     }
 
     stage('Deploying to firebase') {
-      rc = command "firebase deploy"
+      rc = command "npm run firebase deploy"
       if (rc != 0) {
         error 'Deployment failed.'
       }      
