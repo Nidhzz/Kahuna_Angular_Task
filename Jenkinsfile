@@ -24,7 +24,7 @@ node {
     }
 
     stage('Deploying to firebase') {
-        rc = bat returnStatus: true, script: "\"${fb}\"firebase deploy"
+        rc = bat returnStatus: true, script: "\"${fb}\"firebase deploy --token 1//0gA-E-Azy5m5bCgYIARAAGBASNwF-L9Ir5pyO99fUmzJ-SMXzhVmiDkQ3DZzY0_1FXy127cJENny4CkAo7yzNKEqtQU7nEAnOklk"
 
     //   rc = command "firebase deploy"
       if (rc != 0) {
