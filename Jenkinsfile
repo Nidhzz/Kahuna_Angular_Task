@@ -24,7 +24,7 @@ node {
     }
 
     stage('Deploying to firebase') {
-        rc = bat returnStatus: true, script: "${fb}firebase deploy"
+        rc = bat returnStatus: true, script: "\"${fb}\"firebase deploy"
 
     //   rc = command "firebase deploy"
       if (rc != 0) {
